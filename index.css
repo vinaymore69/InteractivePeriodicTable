@@ -15,7 +15,7 @@ body {
     display: flex;
 
     flex-direction: row;
-    border: solid;
+    border: none;
     border-width: thin;
     height: 100vh;
     border-radius: 10px;
@@ -86,7 +86,7 @@ body {
 }
 
 
-.box1 {
+.box{
     width: 70px;
     height: 80px;
     border: solid;
@@ -102,8 +102,38 @@ body {
     flex-direction: column;
     border-color: aliceblue;
  font-family: "Poppins";
- transition: all 0.8s ease-out;
+ transition: all 0.2s ease-in-out;
 }
+.group1 .box:hover,
+.group2 .box:hover{
+    border-color: crimson;
+}
+.group3 .box:hover,
+.group4 .box:hover,
+.group5 .box:hover,
+.group6 .box:hover,
+.group7 .box:hover,
+.group8 .box:hover,
+.group9 .box:hover,
+.group10 .box:hover,
+.group11 .box:hover,
+.group12 .box:hover
+{
+    border-color: royalblue;
+}
+.group13 .box:hover,
+.group14 .box:hover,
+.group15 .box:hover,
+.group16 .box:hover,
+.group17 .box:hover,
+.group18 .box:hover{
+    border-color: rgb(255, 255, 120);
+}
+
+
+
+
+
 h1{
     position: absolute;
     color: #FFA62B;
@@ -116,7 +146,7 @@ h1{
 h3{
     color: #EDE7E3;
     display: flex;
-    font-size: small;
+    font-size: 11px;
     font-weight: 300;
     background-color: transparent;
     margin-top: 60px;
@@ -131,7 +161,7 @@ h5{
 
     margin-top: -15px;
     margin-left: 4px;
-    font-weight: 600;
+    font-weight: 500;
 
 }
 
@@ -152,3 +182,60 @@ h6{
       "slnt" 0;
       text-align: right;
 }
+
+
+
+
+
+.main-element-display{
+    position: absolute;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    left:200px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    border: solid;
+    border-width: 13px;
+    border-radius: 10px;
+    border-color: transparent;
+    box-shadow: rgb(255, 255, 255) 3.2px 3.2px 8px 0px inset, rgba(253, 216, 216, 0.356) -6.2px -3.2px 17px 0px inset;    padding: 20px;
+    font-family: "poppins";
+}
+
+#element-no,
+#element-initials,
+#element-name,
+#element-weight
+ {
+    background-color: transparent;
+    color: white;
+
+   }
+
+   #element-no{
+    font-size: 45px;
+    margin-top: -10px;
+    margin-left: 0px;margin-left: 8px;
+}
+#element-initials{
+    font-size: 60px;
+    font-weight: 600;
+    margin-top: -60px;
+    
+}
+#element-name{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: -75px;
+    margin-left: 8px;
+}
+#element-weight{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: -40px;
+    margin-left: 8px;
+}
+
