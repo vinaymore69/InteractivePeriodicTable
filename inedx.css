@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    background-color: #1d1d1d;
+    color: black;
+    border-color: white;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    display: flex;
+
+    flex-direction: row;
+    border: solid;
+    border-width: thin;
+    height: 100vh;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 5px;
+}
+
+.s-block {
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    width: 11.11%;
+    border-width: thin;
+    border-radius: 10px;
+    padding: 6px;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.d-block {
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    width: 55.56%;
+    border-width: thin;
+    border-radius: 10px;
+    padding: 6px;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.p-block {
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    
+    width: 33.33%;
+    border-width: thin;
+    border-radius: 10px;
+    padding: 6px;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.group1,
+.group2,
+.group3,
+.group4,
+.group5,
+.group6,
+.group7,
+.group8,
+.group9,
+.group10,
+.group11,
+.group12,
+.group13,
+.group14,
+.group15,
+.group16,
+.group17,
+.group18 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* align-items: flex-end; */
+    justify-content: flex-end;
+}
+
+
+.box1 {
+    width: 70px;
+    height: 80px;
+    border: solid;
+    display: flex;
+    border-width: thin;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    border: color(white);
+    /* color: black; */
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    border-color: aliceblue;
+ font-family: "Poppins";
+ transition: all 0.8s ease-out;
+}
+h1{
+    position: absolute;
+    color: #FFA62B;
+    display: flex;
+    font-size: 30px;
+    background-color: transparent;
+    margin-top: -10px;
+    margin-left: 4px;
+}
+h3{
+    color: #EDE7E3;
+    display: flex;
+    font-size: small;
+    font-weight: 300;
+    background-color: transparent;
+    margin-top: 60px;
+    margin-left: 4px;
+
+}
+h5{
+    color: #489FB5;
+    display: flex;
+    font-size: small;
+    background-color: transparent;
+
+    margin-top: -15px;
+    margin-left: 4px;
+    font-weight: 600;
+
+}
+
+h6{
+    position: absolute;
+    color: white;
+    display: flex;
+    font-size: 15px;
+    background-color: transparent;
+    margin-top: -15px;
+    margin-left: 48px;
+    font-weight: 400;
+    font-family: "Afacad Flux";
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+      text-align: right;
+}
