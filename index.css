@@ -17,7 +17,17 @@ body {
     flex-direction: row;
     border: none;
     border-width: thin;
-    height: 100vh;
+    height: 90vh;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 5px;
+}
+.main1{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-width: thin;
+    height: 30vh;
     border-radius: 10px;
     padding: 10px;
     gap: 5px;
@@ -84,26 +94,33 @@ body {
     /* align-items: flex-end; */
     justify-content: flex-end;
 }
-
-
-.box{
-    width: 70px;
-    height: 80px;
-    border: solid;
+.group19,
+.group20{
     display: flex;
-    border-width: thin;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0);
-    cursor: pointer;
-    border: color(white);
-    /* color: black; */
+    flex-direction: row;
+    gap: 8px;
+    /* align-items: flex-end; */
     justify-content: center;
-    /* align-items: center; */
-    flex-direction: column;
-    border-color: aliceblue;
- font-family: "Poppins";
- transition: all 0.2s ease-in-out;
 }
+
+.box {
+    width: 70px; /* Width of the box */
+    height: 80px; /* Height of the box */
+    border: solid thin aliceblue; /* Thin border with color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    flex-direction: column; /* Stack children vertically */
+    font-family: "Poppins"; /* Font family */
+    transition: all 0.2s ease-in-out; /* Transition for hover effects */
+    transition: background-color 0.5s ease; 
+
+}
+
+
+
+
 .group1 .box:hover,
 .group2 .box:hover{
     border-color: crimson;
@@ -136,7 +153,7 @@ body {
 
 h1{
     position: absolute;
-    color: #FFA62B;
+    color: #fbfbfb;
     display: flex;
     font-size: 30px;
     background-color: transparent;
@@ -153,8 +170,18 @@ h3{
     margin-left: 4px;
 
 }
+#long-text{
+    color: #EDE7E3;
+    display: flex;
+    font-size: 9px;
+    font-weight: 300;
+    background-color: transparent;
+    margin-top: 60px;
+    margin-left: 4px;
+    padding-bottom: 4px;
+}
 h5{
-    color: #489FB5;
+    color: #ffffff;
     display: flex;
     font-size: small;
     background-color: transparent;
@@ -182,7 +209,23 @@ h6{
       "slnt" 0;
       text-align: right;
 }
-
+#long-number{
+    position: absolute;
+    color: white;
+    display: flex;
+    font-size: 13px;
+    background-color: transparent;
+    margin-top: -25px;
+    margin-left: 45px;
+    font-weight: 400;
+    font-family: "Afacad Flux";
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+      text-align: right;
+}
 
 
 
@@ -196,7 +239,7 @@ h6{
     left:200px;
     margin-top: 10px;
     margin-left: 10px;
-
+    
     border: solid;
     border-width: 13px;
     border-radius: 10px;
@@ -238,4 +281,301 @@ h6{
     margin-top: -40px;
     margin-left: 8px;
 }
+
+
+
+.elements-types{
+    display: flex;
+    width: 450px;
+    height: 240px;
+    position: absolute;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    background-color: transparent;
+    margin-left: 250px;
+    margin-top: 25px;
+    border-radius: 10px;
+    flex-direction: row;
+    padding: 0px 10px 0px 10px;
+    gap: 10px;
+    font-family: "poppins";
+    color: #EDE7E3;
+cursor: pointer;
+
+}
+
+.metals-group,
+.nonmetals-group,
+.metalloids{
+    display: flex;
+/*    
+    border: solid;
+    border-width: thin;
+   */
+}
+.metals-group{
+    width:250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.metalloids{
+    width: 50px;
+    padding: 10px;
+}
+.nonmetals-group{
+    width:90px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.metals{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+    z-index: 1;
+}
+.metals h6{
+    margin-top: 30px;
+    margin-left: 0px;
+}
+
+.metals-types{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;}
+
+.alkali-metals,
+.alkaline-earth-metals,
+.Lanthanoids-Actinoids,
+.transition-metals,
+.post-transition-metals{
+    display: flex;
+}
+
+.alkali-metals{
+    width: 20px;
+    height:160px;
+    background-color: #9a630a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    transition: background-color 0.5s ease; 
+}
+.alkali-metals h6{
+    width: 100px;
+    margin-left: 0px;
+    transform: rotate(90deg);
+}
+
+.alkaline-earth-metals{
+    width: 40px;
+    height:160px;
+    background-color: #b9b901;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    transition: background-color 0.5s ease; 
+}
+.alkaline-earth-metals h6{
+    width: 100px;
+    margin-left: 0px;
+    transform: rotate(90deg);
+    text-align: left;
+}
+
+.Lanthanoids-Actinoids{
+    width: 100px;
+    height:160px;
+    background-color: transparent;  
+    flex-direction: column;
+    gap:10px;
+    justify-content: space-between;
+    
+}
+.lanthanoids{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background-color: #543913;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+}
+.lanthanoids h6{
+    margin-left: 0px;
+}
+
+.actinoids{
+    display: flex;
+    height: 80px;
+    background-color: #7c1e5b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    transition: background-color 0.5s ease; 
+}
+.actinoids h6{
+    margin-left: 0px;
+}
+
+.transition-metals{
+    width: 20px;
+    height:160px;
+    background-color: #891809;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    transition: background-color 0.5s ease; 
+}
+.transition-metals h6{
+    margin-left: 0px;
+    transform: rotate(90deg);
+    text-align: left;
+}
+
+.post-transition-metals{
+    width: 40px;
+    height:160px;
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    transition: background-color 0.5s ease; 
+}
+.post-transition-metals h6{
+    transform: rotate(90deg);
+    text-align: left;
+    margin-left: 0px;
+    width: 100px;
+}
+
+
+
+.metalloids{
+  height: 190px;
+  margin-top: 10px;
+  background-color: rgb(26, 161, 118);
+  border: solid;
+  border-width: thin;
+  border-color: #EDE7E3;
+  /* border-radius: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease; 
+
+}
+.metalloids h6{
+    margin-left: 0px;
+    transform: rotate(90deg);
+    text-align: left;
+    width: 10px;
+}
+
+.nonmetals-group{
+    height: 100%;
+    background-color: transparent;
+    padding: 10px;
+    gap: 10px;
+}
+.nonmetals{
+    width: 100%;
+    height: 40px;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    background-color: transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+}
+.nonmetals h6{
+    margin-top: 35px;
+    margin-left: 0px;
+}
+
+.nonmetals-types{
+    display: flex;
+    flex-direction: row;
+    gap:8px;
+
+}
+.reactive-nonmetals{
+    width: 80px;
+    background-color: #17773e;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    transition: background-color 0.5s ease; 
+}
+.reactive-nonmetals h6{
+    transform: rotate(90deg);
+    text-align: left;
+    margin-left: 0px;
+    width: 100px;
+}
+.nobel-gases{
+    width:  40px;
+    height: 160px;
+    background-color: #55187b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-width: thin;
+    border-color: #EDE7E3;
+    transition: background-color 0.5s ease; 
+}
+.nobel-gases h6{
+    transform: rotate(90deg);
+    text-align: left;
+    margin-left: 0px;
+    width: 100px;
+}
+
+
+
+.transparent {
+    background-color: transparent !important;
+  }
+
 
