@@ -65,9 +65,9 @@ function addTiltAttributes() {
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(box => {
         box.setAttribute('data-tilt', '');
-        box.setAttribute('data-tilt-max', '20');
-        box.setAttribute('data-tilt-speed', '700');
-        box.setAttribute('data-tilt-perspective', '900');
+        box.setAttribute('data-tilt-max', '80');
+        box.setAttribute('data-tilt-speed', '900');
+        box.setAttribute('data-tilt-perspective', '1000');
     });
 }
 
@@ -77,4 +77,251 @@ VanillaTilt.init(document.querySelectorAll(".box"), {
     max: 20,
     speed: 700,
     perspective: 900
+});
+
+
+
+
+
+
+const metalsDiv = document.querySelector('.metals');
+const metalloidsDiv = document.querySelector('.metalloids');
+const nonMetalsDiv = document.querySelector('.nonmetals');
+
+// Select specific groups for Metals hover
+const reactiveNonMetals = document.querySelector('.reactive-nonmetals');
+const nobelGases = document.querySelector('.nobel-gases');
+
+// Select specific groups for Non-Metals hover
+const metalsGroups = document.querySelectorAll('.alkali-metals, .alkaline-earth-metals, .lanthanoids, .actinoids, .transition-metals, .post-transition-metals');
+
+// Metals hover effect (affects metalloids, reactive-nonmetals, and nobel-gases)
+metalsDiv.addEventListener('mouseenter', () => {
+  metalloidsDiv.classList.add('transparent');
+  reactiveNonMetals.classList.add('transparent');
+  nobelGases.classList.add('transparent');
+});
+
+metalsDiv.addEventListener('mouseleave', () => {
+  metalloidsDiv.classList.remove('transparent');
+  reactiveNonMetals.classList.remove('transparent');
+  nobelGases.classList.remove('transparent');
+});
+
+// Metalloids hover effect (only self-colored, all else transparent)
+metalloidsDiv.addEventListener('mouseenter', () => {
+  metalsDiv.classList.add('transparent');
+  reactiveNonMetals.classList.add('transparent');
+  nobelGases.classList.add('transparent');
+  metalsGroups.forEach(group => group.classList.add('transparent'));
+});
+
+metalloidsDiv.addEventListener('mouseleave', () => {
+  metalsDiv.classList.remove('transparent');
+  reactiveNonMetals.classList.remove('transparent');
+  nobelGases.classList.remove('transparent');
+  metalsGroups.forEach(group => group.classList.remove('transparent'));
+});
+
+// Non-Metals hover effect (affects alkali-metals, alkaline-earth-metals, lanthanoids, actinoids, transition-metals, post-transition-metals, but not metalloids)
+nonMetalsDiv.addEventListener('mouseenter', () => {
+  metalsGroups.forEach(group => group.classList.add('transparent'));
+  // Ensure metalloids are also transparent on hover
+  metalloidsDiv.classList.add('transparent');
+});
+
+nonMetalsDiv.addEventListener('mouseleave', () => {
+  metalsGroups.forEach(group => group.classList.remove('transparent'));
+  // Make sure metalloids return to normal on mouse leave
+  metalloidsDiv.classList.remove('transparent');
+});
+
+
+
+
+
+
+// Alkali metals
+const alkaliMetals = [3, 11, 19, 37, 55, 87];
+
+
+alkaliMetals.forEach(num => {
+    const box = document.getElementById(num);
+    if (box) {
+        box.style.backgroundColor = "#9a630a"; // Set background color
+    }
+});
+
+
+// Define the arrays for each category with their corresponding colors
+const alkalineEarthMetals = [4, 12, 20, 38, 56, 88]; // Color: #b9b901
+const lanthanides = [`57a`,57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71]; // Color: #543913
+const actinides = [`89a`,89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103]; // Color: #7c1e5b
+const transitionMetals = [
+  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+  39, 40, 41, 42, 43, 44, 45, 46, 47, 48,
+  72, 73, 74, 75, 76, 77, 78, 79, 80,
+  104, 105, 106, 107, 108,
+]; // Color: #891809
+const postTransitionMetals = [13, 31, 49, 50, 81, 82, 83]; // Color: royalblue
+const metalloids = [5, 14, 32, 33, 51, 52, 84]; // Color: rgb(26, 161, 118)
+const reactiveNon_Metals = [1, 6, 7, 8, 15, 16, 34, 9, 17, 35, 53, 85]; // Color: #17773e
+const nobleGases = [2, 10, 18, 36, 54, 86]; // Color: #55187b
+
+// Function to set background color based on category
+function setElementColors(categoryArray, color) {
+    categoryArray.forEach(num => {
+        const box = document.getElementById(num);
+        if (box) {
+            box.style.backgroundColor = color; // Set the background color
+        }
+    });
+}
+
+// Apply colors for each category
+setElementColors(alkalineEarthMetals, "#b9b901");
+setElementColors(lanthanides, "#543913");
+setElementColors(actinides, "#7c1e5b");
+setElementColors(transitionMetals, "#891809");
+setElementColors(postTransitionMetals, "royalblue");
+setElementColors(metalloids, "rgb(26, 161, 118)");
+setElementColors(reactiveNon_Metals, "#17773e");
+setElementColors(nobleGases, "#55187b");
+
+
+
+// Store original colors
+const originalColors = {};
+
+// Function to change background color of all boxes except the specified group
+function changeOtherBoxesColor(groupArray, isHovering) {
+    const boxes = document.querySelectorAll('.box'); // Select all boxes
+    boxes.forEach(box => {
+        const id = parseInt(box.id); // Convert ID to number
+        if (!groupArray.includes(id)) { // Check if ID is not in the current group
+            if (isHovering) {
+                // Store original color if hovering
+                originalColors[id] = box.style.backgroundColor || ''; // Save current color
+                box.style.backgroundColor = 'transparent'; // Set to transparent on hover
+            } else {
+                // Revert to original color
+                box.style.backgroundColor = originalColors[id] || ''; // Reset to original color
+            }
+        }
+    });
+}
+
+// Add event listeners for each group of elements
+document.querySelector('.alkali-metals').addEventListener('mouseover', () => changeOtherBoxesColor(alkaliMetals, true));
+document.querySelector('.alkali-metals').addEventListener('mouseout', () => changeOtherBoxesColor(alkaliMetals, false));
+
+document.querySelector('.alkaline-earth-metals').addEventListener('mouseover', () => changeOtherBoxesColor(alkalineEarthMetals, true));
+document.querySelector('.alkaline-earth-metals').addEventListener('mouseout', () => changeOtherBoxesColor(alkalineEarthMetals, false));
+
+document.querySelector('.lanthanoids').addEventListener('mouseover', () => changeOtherBoxesColor(lanthanides, true));
+document.querySelector('.lanthanoids').addEventListener('mouseout', () => changeOtherBoxesColor(lanthanides, false));
+
+document.querySelector('.actinoids').addEventListener('mouseover', () => changeOtherBoxesColor(actinides, true));
+document.querySelector('.actinoids').addEventListener('mouseout', () => changeOtherBoxesColor(actinides, false));
+
+document.querySelector('.transition-metals').addEventListener('mouseover', () => changeOtherBoxesColor(transitionMetals, true));
+document.querySelector('.transition-metals').addEventListener('mouseout', () => changeOtherBoxesColor(transitionMetals, false));
+
+document.querySelector('.post-transition-metals').addEventListener('mouseover', () => changeOtherBoxesColor(postTransitionMetals, true));
+document.querySelector('.post-transition-metals').addEventListener('mouseout', () => changeOtherBoxesColor(postTransitionMetals, false));
+
+document.querySelector('.metalloids').addEventListener('mouseover', () => changeOtherBoxesColor(metalloids, true));
+document.querySelector('.metalloids').addEventListener('mouseout', () => changeOtherBoxesColor(metalloids, false));
+
+document.querySelector('.reactive-nonmetals').addEventListener('mouseover', () => changeOtherBoxesColor(reactiveNon_Metals, true));
+document.querySelector('.reactive-nonmetals').addEventListener('mouseout', () => changeOtherBoxesColor(reactiveNon_Metals, false));
+
+document.querySelector('.nobel-gases').addEventListener('mouseover', () => changeOtherBoxesColor(nobleGases, true));
+document.querySelector('.nobel-gases').addEventListener('mouseout', () => changeOtherBoxesColor(nobleGases, false));
+
+// Event listeners for Metals div
+document.querySelector('.metals').addEventListener('mouseover', () => {
+    changeBoxesColor(metalloids, true); // Change metalloids to transparent
+    changeBoxesColor(reactiveNon_Metals, true); // Change reactive non-metals to transparent
+    changeBoxesColor(nobleGases, true); // Change noble gases to transparent
+});
+
+document.querySelector('.metals').addEventListener('mouseout', () => {
+    changeBoxesColor(metalloids, false); // Revert metalloids
+    changeBoxesColor(reactiveNon_Metals, false); // Revert reactive non-metals
+    changeBoxesColor(nobleGases, false); // Revert noble gases
+});
+
+document.querySelector('.nonmetals').addEventListener('mouseover', () => {
+    changeBoxesColor(alkaliMetals, true); // Change metalloids to transparent
+    changeBoxesColor(alkalineEarthMetals, true); // Change reactive non-metals to transparent
+    changeBoxesColor(lanthanides, true); // Change noble gases to transparent
+    changeBoxesColor(actinides, true); // Change noble gases to transparent
+    changeBoxesColor(transitionMetals, true); // Change noble gases to transparent
+    changeBoxesColor(postTransitionMetals, true); // Change noble gases to transparent
+    changeBoxesColor(metalloids, true); // Change noble gases to transparent
+});
+
+document.querySelector('.nonmetals').addEventListener('mouseout', () => {
+    changeBoxesColor(alkaliMetals, false); // Change metalloids to transparent
+    changeBoxesColor(alkalineEarthMetals, false); // Change reactive non-metals to transparent
+    changeBoxesColor(lanthanides, false); // Change noble gases to transparent
+    changeBoxesColor(actinides, false); // Change noble gases to transparent
+    changeBoxesColor(transitionMetals, false); // Change noble gases to transparent
+    changeBoxesColor(postTransitionMetals, false); // Change noble gases to transparent
+    changeBoxesColor(metalloids, false); // Change noble gases to transparent
+});
+
+// Function to change background color of specified IDs
+function changeBoxesColor(ids, transparent) {
+    ids.forEach(id => {
+        const box = document.getElementById(id);
+        if (box) {
+            box.style.backgroundColor = transparent ? 'transparent' : originalColors[id] || ''; // Reset to original color
+        }
+    });
+}
+
+
+
+// Select all div elements by class names with new variable names
+const alkaliDiv = document.querySelector('.alkali-metals');
+const alkalineEarthDiv = document.querySelector('.alkaline-earth-metals');
+const lanthanoidsDiv = document.querySelector('.lanthanoids');
+const actinoidsDiv = document.querySelector('.actinoids');
+const transitionMetalsDiv = document.querySelector('.transition-metals');
+const postTransitionDiv = document.querySelector('.post-transition-metals');
+const reactiveNonmetalsDiv = document.querySelector('.reactive-nonmetals');
+const nobleGasesDiv = document.querySelector('.nobel-gases');
+const  metalloids_Div = document.querySelector('.metalloids');
+
+
+// Create an array of all the divs using new variable names
+const allElementDivs = [
+    alkaliDiv,
+    alkalineEarthDiv,
+    lanthanoidsDiv,
+    actinoidsDiv,
+    transitionMetalsDiv,
+    postTransitionDiv,
+    reactiveNonmetalsDiv,
+    nobleGasesDiv,
+    metalloids_Div
+];
+
+// Add mouseover and mouseout event listeners to each div
+allElementDivs.forEach(elementDiv => {
+    elementDiv.addEventListener('mouseover', () => {
+        allElementDivs.forEach(otherElementDiv => {
+            if (otherElementDiv !== elementDiv) {
+                otherElementDiv.classList.add('transparent'); // Add transparent class to others
+            }
+        });
+    });
+
+    elementDiv.addEventListener('mouseout', () => {
+        allElementDivs.forEach(otherElementDiv => {
+            otherElementDiv.classList.remove('transparent'); // Remove transparent class
+        });
+    });
 });
