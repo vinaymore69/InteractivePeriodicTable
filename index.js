@@ -5,12 +5,12 @@ const periodicElements = [
     "Gallium", "Germanium", "Arsenic", "Selenium", "Bromine", "Krypton", "Rubidium", "Strontium", "Yttrium", "Zirconium",
     "Niobium", "Molybdenum", "Technetium", "Ruthenium", "Rhodium", "Palladium", "Silver", "Cadmium", "Indium", "Tin",
     "Antimony", "Tellurium", "Iodine", "Xenon", "Cesium", "Barium", "Lanthanum", "Cerium", "Praseodymium", "Neodymium",
-    "Promethium", "Samarium", "Europium", "Gadolinium", "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", 
-    "Lutetium", "Hafnium", "Tantalum", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury", 
-    "Thallium", "Lead", "Bismuth", "Polonium", "Astatine", "Radon", "Francium", "Radium", "Actinium", "Thorium", 
-    "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", 
-    "Fermium", "Mendelevium", "Nobelium", "Lawrencium", "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium", 
-    "Meitnerium", "Darmstadtium", "Roentgenium", "Copernicium", "Nihonium", "Flerovium", "Moscovium", "Livermorium", 
+    "Promethium", "Samarium", "Europium", "Gadolinium", "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium",
+    "Lutetium", "Hafnium", "Tantalum", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury",
+    "Thallium", "Lead", "Bismuth", "Polonium", "Astatine", "Radon", "Francium", "Radium", "Actinium", "Thorium",
+    "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium",
+    "Fermium", "Mendelevium", "Nobelium", "Lawrencium", "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium",
+    "Meitnerium", "Darmstadtium", "Roentgenium", "Copernicium", "Nihonium", "Flerovium", "Moscovium", "Livermorium",
     "Tennessine", "Oganesson"
 ];
 
@@ -21,28 +21,272 @@ const periodicElementInitials = [
     "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr",
     "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn",
     "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd",
-    "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", 
-    "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", 
-    "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", 
-    "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", 
-    "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", 
+    "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb",
+    "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg",
+    "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th",
+    "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm",
+    "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds",
     "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"
 ];
 
 const periodicElementWeights = [
-    1.008, 4.0026, 6.94, 9.0122, 10.81, 12.011, 14.007, 15.999, 18.998, 20.180, 
-    22.990, 24.305, 26.982, 28.085, 30.974, 32.06, 35.45, 39.948, 39.098, 40.078, 
-    44.956, 47.867, 50.942, 51.996, 54.938, 55.845, 58.933, 58.693, 63.546, 65.38, 
-    69.723, 72.63, 74.922, 78.971, 79.904, 83.798, 85.468, 87.62, 88.906, 91.224, 
-    92.906, 95.95, 98, 101.07, 102.91, 106.42, 107.87, 112.41, 114.82, 118.71, 
-    121.76, 127.6, 126.9, 131.29, 132.91, 137.33, 138.91, 140.12, 140.91, 144.24, 
-    145, 150.36, 151.96, 157.25, 158.93, 162.5, 164.93, 167.26, 168.93, 173.05, 
-    174.97, 178.49, 180.95, 183.84, 186.21, 190.23, 192.22, 195.08, 196.97, 200.59, 
-    204.38, 207.2, 208.98, 209, 210, 222, 223, 226, 227, 232.04, 
-    231.04, 238.03, 237, 244, 243, 247, 247, 251, 252, 257, 
-    258, 259, 262, 267, 270, 271, 270, 277, 276, 281, 
+    1.008, 4.0026, 6.94, 9.0122, 10.81, 12.011, 14.007, 15.999, 18.998, 20.180,
+    22.990, 24.305, 26.982, 28.085, 30.974, 32.06, 35.45, 39.948, 39.098, 40.078,
+    44.956, 47.867, 50.942, 51.996, 54.938, 55.845, 58.933, 58.693, 63.546, 65.38,
+    69.723, 72.63, 74.922, 78.971, 79.904, 83.798, 85.468, 87.62, 88.906, 91.224,
+    92.906, 95.95, 98, 101.07, 102.91, 106.42, 107.87, 112.41, 114.82, 118.71,
+    121.76, 127.6, 126.9, 131.29, 132.91, 137.33, 138.91, 140.12, 140.91, 144.24,
+    145, 150.36, 151.96, 157.25, 158.93, 162.5, 164.93, 167.26, 168.93, 173.05,
+    174.97, 178.49, 180.95, 183.84, 186.21, 190.23, 192.22, 195.08, 196.97, 200.59,
+    204.38, 207.2, 208.98, 209, 210, 222, 223, 226, 227, 232.04,
+    231.04, 238.03, 237, 244, 243, 247, 247, 251, 252, 257,
+    258, 259, 262, 267, 270, 271, 270, 277, 276, 281,
     282, 285, 286, 289, 290, 293, 294, 294
 ];
+
+const electronConfigurations = [
+    "1",                 // Hydrogen (1)
+    "2",                 // Helium (2)
+    "2,1",               // Lithium (3)
+    "2,2",               // Beryllium (4)
+    "2,3",               // Boron (5)
+    "2,4",               // Carbon (6)
+    "2,5",               // Nitrogen (7)
+    "2,6",               // Oxygen (8)
+    "2,7",               // Fluorine (9)
+    "2,8",               // Neon (10)
+    "2,8,1",             // Sodium (11)
+    "2,8,2",             // Magnesium (12)
+    "2,8,3",             // Aluminium (13)
+    "2,8,4",             // Silicon (14)
+    "2,8,5",             // Phosphorus (15)
+    "2,8,6",             // Sulfur (16)
+    "2,8,7",             // Chlorine (17)
+    "2,8,8",             // Argon (18)
+    "2,8,8,1",           // Potassium (19)
+    "2,8,8,2",           // Calcium (20)
+    "2,8,9,2",           // Scandium (21)
+    "2,8,10,2",          // Titanium (22)
+    "2,8,11,2",          // Vanadium (23)
+    "2,8,12,2",          // Chromium (24)
+    "2,8,13,2",          // Manganese (25)
+    "2,8,14,2",          // Iron (26)
+    "2,8,15,2",          // Cobalt (27)
+    "2,8,16,2",          // Nickel (28)
+    "2,8,17,2",          // Copper (29)
+    "2,8,18,2",          // Zinc (30)
+    "2,8,18,3",          // Gallium (31)
+    "2,8,18,4",          // Germanium (32)
+    "2,8,18,5",          // Arsenic (33)
+    "2,8,18,6",          // Selenium (34)
+    "2,8,18,7",          // Bromine (35)
+    "2,8,18,8",          // Krypton (36)
+    "2,8,18,8,1",        // Rubidium (37)
+    "2,8,18,8,2",        // Strontium (38)
+    "2,8,18,9,2",        // Yttrium (39)
+    "2,8,18,10,2",       // Zirconium (40)
+    "2,8,18,11,2",       // Niobium (41)
+    "2,8,18,12,2",       // Molybdenum (42)
+    "2,8,18,13,2",       // Technetium (43)
+    "2,8,18,14,2",       // Ruthenium (44)
+    "2,8,18,15,2",       // Rhodium (45)
+    "2,8,18,16,2",       // Palladium (46)
+    "2,8,18,17,2",       // Silver (47)
+    "2,8,18,18,2",       // Cadmium (48)
+    "2,8,18,18,3",       // Indium (49)
+    "2,8,18,18,4",       // Tin (50)
+    "2,8,18,18,5",       // Antimony (51)
+    "2,8,18,18,6",       // Tellurium (52)
+    "2,8,18,18,7",       // Iodine (53)
+    "2,8,18,18,8",       // Xenon (54)
+    "2,8,18,18,8,1",     // Caesium (55)
+    "2,8,18,18,8,2",     // Barium (56)
+    "2,8,18,18,9,2",     // Lanthanum (57)
+    "2,8,18,18,10,2",    // Cerium (58)
+    "2,8,18,18,11,2",    // Praseodymium (59)
+    "2,8,18,18,12,2",    // Neodymium (60)
+    "2,8,18,18,13,2",    // Promethium (61)
+    "2,8,18,18,14,2",    // Samarium (62)
+    "2,8,18,18,15,2",    // Europium (63)
+    "2,8,18,18,16,2",    // Gadolinium (64)
+    "2,8,18,18,17,2",    // Terbium (65)
+    "2,8,18,18,18,2",    // Dysprosium (66)
+    "2,8,18,18,19,2",    // Holmium (67)
+    "2,8,18,18,20,2",    // Erbium (68)
+    "2,8,18,18,21,2",    // Thulium (69)
+    "2,8,18,18,22,2",    // Ytterbium (70)
+    "2,8,18,18,23,2",    // Lutetium (71)
+    "2,8,18,18,24,2",    // Hafnium (72)
+    "2,8,18,18,25,2",    // Tantalum (73)
+    "2,8,18,18,26,2",    // Tungsten (74)
+    "2,8,18,18,27,2",    // Rhenium (75)
+    "2,8,18,18,28,2",    // Osmium (76)
+    "2,8,18,18,29,2",    // Iridium (77)
+    "2,8,18,18,30,2",    // Platinum (78)
+    "2,8,18,18,31,2",    // Gold (79)
+    "2,8,18,18,32,2",    // Mercury (80)
+    "2,8,18,18,32,3",    // Thallium (81)
+    "2,8,18,18,32,4",    // Lead (82)
+    "2,8,18,18,32,5",    // Bismuth (83)
+    "2,8,18,18,32,6",    // Polonium (84)
+    "2,8,18,18,32,7",    // Astatine (85)
+    "2,8,18,18,32,8",    // Radon (86)
+    "2,8,18,32,18,8,1",  // Francium (87)
+    "2,8,18,32,18,8,2",  // Radium (88)
+    "2,8,18,32,18,9,2",  // Actinium (89)
+    "2,8,18,32,18,10,2", // Thorium (90)
+    "2,8,18,32,18,11,2", // Protactinium (91)
+    "2,8,18,32,18,12,2", // Uranium (92)
+    "2,8,18,32,18,13,2", // Neptunium (93)
+    "2,8,18,32,18,14,2", // Plutonium (94)
+    "2,8,18,32,18,15,2", // Americium (95)
+    "2,8,18,32,18,16,2", // Curium (96)
+    "2,8,18,32,18,17,2", // Berkelium (97)
+    "2,8,18,32,18,18,2", // Californium (98)
+    "2,8,18,32,18,19,2", // Einsteinium (99)
+    "2,8,18,32,18,20,2", // Fermium (100)
+    "2,8,18,32,18,21,2", // Mendelevium (101)
+    "2,8,18,32,18,22,2", // Nobelium (102)
+    "2,8,18,32,18,23,2", // Lawrencium (103)
+    "2,8,18,32,18,24,2", // Rutherfordium (104)
+    "2,8,18,32,18,25,2", // Dubnium (105)
+    "2,8,18,32,18,26,2", // Seaborgium (106)
+    "2,8,18,32,18,27,2", // Bohrium (107)
+    "2,8,18,32,18,28,2", // Hassium (108)
+    "2,8,18,32,18,29,2", // Meitnerium (109)
+    "2,8,18,32,18,30,2", // Darmstadtium (110)
+    "2,8,18,32,18,31,2", // Roentgenium (111)
+    "2,8,18,32,18,32,2", // Copernicium (112)
+    "2,8,18,32,18,32,3", // Nihonium (113)
+    "2,8,18,32,18,32,4", // Flerovium (114)
+    "2,8,18,32,18,32,5", // Moscovium (115)
+    "2,8,18,32,18,32,6", // Livermorium (116)
+    "2,8,18,32,18,32,7", // Tennessine (117)
+    "2,8,18,32,18,32,8"  // Oganesson (118)
+];
+
+const valencyArray = [
+    1, // Hydrogen
+    0, // Helium
+    1, // Lithium
+    2, // Beryllium
+    3, // Boron
+    4, // Carbon
+    3, // Nitrogen
+    2, // Oxygen
+    1, // Fluorine
+    0, // Neon
+    1, // Sodium
+    2, // Magnesium
+    3, // Aluminum
+    4, // Silicon
+    3, // Phosphorus
+    2, // Sulfur
+    1, // Chlorine
+    0, // Argon
+    1, // Potassium
+    2, // Calcium
+    3, // Scandium (common oxidation state is +3)
+    4, // Titanium
+    5, // Vanadium
+    6, // Chromium (can have valency 2, 3, 6, but 6 is common)
+    7, // Manganese (common oxidation state is +7)
+    2, // Iron (common valency +2 and +3, we'll go with +2)
+    3, // Cobalt
+    2, // Nickel
+    1, // Copper (common oxidation state is +1)
+    2, // Zinc
+    3, // Gallium
+    4, // Germanium
+    3, // Arsenic
+    2, // Selenium
+    1, // Bromine
+    0, // Krypton
+    1, // Rubidium
+    2, // Strontium
+    3, // Yttrium
+    4, // Zirconium
+    5, // Niobium
+    6, // Molybdenum
+    7, // Technetium
+    8, // Ruthenium (multiple valencies, most common is +8)
+    3, // Rhodium
+    4, // Palladium
+    1, // Silver
+    2, // Cadmium
+    3, // Indium
+    4, // Tin
+    3, // Antimony
+    2, // Tellurium
+    1, // Iodine
+    0, // Xenon
+    1, // Cesium
+    2, // Barium
+    3, // Lanthanum
+    4, // Cerium (can vary, but we'll use +4)
+    3, // Praseodymium
+    3, // Neodymium
+    3, // Promethium
+    3, // Samarium
+    3, // Europium
+    3, // Gadolinium
+    3, // Terbium
+    3, // Dysprosium
+    3, // Holmium
+    3, // Erbium
+    3, // Thulium
+    2, // Ytterbium
+    3, // Lutetium
+    4, // Hafnium
+    5, // Tantalum
+    6, // Tungsten
+    7, // Rhenium
+    8, // Osmium
+    3, // Iridium
+    4, // Platinum
+    1, // Gold (common oxidation state is +1)
+    2, // Mercury
+    3, // Thallium
+    4, // Lead
+    5, // Bismuth
+    2, // Polonium
+    1, // Astatine
+    0, // Radon
+    1, // Francium
+    2, // Radium
+    3, // Actinium
+    4, // Thorium
+    5, // Protactinium
+    6, // Uranium
+    5, // Neptunium
+    6, // Plutonium
+    7, // Americium
+    6, // Curium
+    3, // Berkelium
+    3, // Californium
+    3, // Einsteinium
+    3, // Fermium
+    3, // Mendelevium
+    3, // Nobelium
+    3, // Lawrencium
+    4, // Rutherfordium
+    5, // Dubnium
+    6, // Seaborgium
+    7, // Bohrium
+    7, // Hassium
+    7, // Meitnerium
+    8, // Darmstadtium (assumed, similar to Platinum)
+    8, // Roentgenium (assumed)
+    8, // Copernicium (assumed)
+    3, // Nihonium (assumed)
+    4, // Flerovium (assumed)
+    5, // Moscovium (assumed)
+    6, // Livermorium (assumed)
+    7, // Tennessine (assumed)
+    8  // Oganesson (assumed)
+];
+
+
 
 
 
@@ -50,7 +294,7 @@ const boxes = document.querySelectorAll('.box');
 
 // Add event listeners to each box
 boxes.forEach(box => {
-    box.addEventListener('mouseover', function() {
+    box.addEventListener('mouseover', function () {
         const elementId = parseInt(this.id) - 1; // Get the index (id starts from 1, arrays start from 0)
 
         // Update the content of the main element display
@@ -58,6 +302,8 @@ boxes.forEach(box => {
         document.getElementById('element-initials').textContent = periodicElementInitials[elementId];
         document.getElementById('element-name').textContent = periodicElements[elementId];
         document.getElementById('element-weight').textContent = periodicElementWeights[elementId];
+        document.getElementById('electrons').textContent= electronConfigurations[elementId];
+        document.getElementById('valency-no').textContent= valencyArray[elementId];
     });
 });
 
@@ -97,43 +343,43 @@ const metalsGroups = document.querySelectorAll('.alkali-metals, .alkaline-earth-
 
 // Metals hover effect (affects metalloids, reactive-nonmetals, and nobel-gases)
 metalsDiv.addEventListener('mouseenter', () => {
-  metalloidsDiv.classList.add('transparent');
-  reactiveNonMetals.classList.add('transparent');
-  nobelGases.classList.add('transparent');
+    metalloidsDiv.classList.add('transparent');
+    reactiveNonMetals.classList.add('transparent');
+    nobelGases.classList.add('transparent');
 });
 
 metalsDiv.addEventListener('mouseleave', () => {
-  metalloidsDiv.classList.remove('transparent');
-  reactiveNonMetals.classList.remove('transparent');
-  nobelGases.classList.remove('transparent');
+    metalloidsDiv.classList.remove('transparent');
+    reactiveNonMetals.classList.remove('transparent');
+    nobelGases.classList.remove('transparent');
 });
 
 // Metalloids hover effect (only self-colored, all else transparent)
 metalloidsDiv.addEventListener('mouseenter', () => {
-  metalsDiv.classList.add('transparent');
-  reactiveNonMetals.classList.add('transparent');
-  nobelGases.classList.add('transparent');
-  metalsGroups.forEach(group => group.classList.add('transparent'));
+    metalsDiv.classList.add('transparent');
+    reactiveNonMetals.classList.add('transparent');
+    nobelGases.classList.add('transparent');
+    metalsGroups.forEach(group => group.classList.add('transparent'));
 });
 
 metalloidsDiv.addEventListener('mouseleave', () => {
-  metalsDiv.classList.remove('transparent');
-  reactiveNonMetals.classList.remove('transparent');
-  nobelGases.classList.remove('transparent');
-  metalsGroups.forEach(group => group.classList.remove('transparent'));
+    metalsDiv.classList.remove('transparent');
+    reactiveNonMetals.classList.remove('transparent');
+    nobelGases.classList.remove('transparent');
+    metalsGroups.forEach(group => group.classList.remove('transparent'));
 });
 
 // Non-Metals hover effect (affects alkali-metals, alkaline-earth-metals, lanthanoids, actinoids, transition-metals, post-transition-metals, but not metalloids)
 nonMetalsDiv.addEventListener('mouseenter', () => {
-  metalsGroups.forEach(group => group.classList.add('transparent'));
-  // Ensure metalloids are also transparent on hover
-  metalloidsDiv.classList.add('transparent');
+    metalsGroups.forEach(group => group.classList.add('transparent'));
+    // Ensure metalloids are also transparent on hover
+    metalloidsDiv.classList.add('transparent');
 });
 
 nonMetalsDiv.addEventListener('mouseleave', () => {
-  metalsGroups.forEach(group => group.classList.remove('transparent'));
-  // Make sure metalloids return to normal on mouse leave
-  metalloidsDiv.classList.remove('transparent');
+    metalsGroups.forEach(group => group.classList.remove('transparent'));
+    // Make sure metalloids return to normal on mouse leave
+    metalloidsDiv.classList.remove('transparent');
 });
 
 
@@ -155,13 +401,13 @@ alkaliMetals.forEach(num => {
 
 // Define the arrays for each category with their corresponding colors
 const alkalineEarthMetals = [4, 12, 20, 38, 56, 88]; // Color: #b9b901
-const lanthanides = [`57a`,57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71]; // Color: #543913
-const actinides = [`89a`,89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103]; // Color: #7c1e5b
+const lanthanides = [`57a`, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71]; // Color: #543913
+const actinides = [`89a`, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103]; // Color: #7c1e5b
 const transitionMetals = [
-  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-  39, 40, 41, 42, 43, 44, 45, 46, 47, 48,
-  72, 73, 74, 75, 76, 77, 78, 79, 80,
-  104, 105, 106, 107, 108,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    39, 40, 41, 42, 43, 44, 45, 46, 47, 48,
+    72, 73, 74, 75, 76, 77, 78, 79, 80,
+    104, 105, 106, 107, 108,
 ]; // Color: #891809
 const postTransitionMetals = [13, 31, 49, 50, 81, 82, 83]; // Color: royalblue
 const metalloids = [5, 14, 32, 33, 51, 52, 84]; // Color: rgb(26, 161, 118)
@@ -179,10 +425,10 @@ function setElementColors(categoryArray, color) {
 }
 
 // Apply colors for each category
-setElementColors(alkalineEarthMetals, "#b9b901");
+setElementColors(alkalineEarthMetals, "#CC7178");
 setElementColors(lanthanides, "#543913");
-setElementColors(actinides, "#7c1e5b");
-setElementColors(transitionMetals, "#891809");
+setElementColors(actinides, "#6D2E46");
+setElementColors(transitionMetals, "crimson");
 setElementColors(postTransitionMetals, "royalblue");
 setElementColors(metalloids, "rgb(26, 161, 118)");
 setElementColors(reactiveNon_Metals, "#17773e");
@@ -293,7 +539,7 @@ const transitionMetalsDiv = document.querySelector('.transition-metals');
 const postTransitionDiv = document.querySelector('.post-transition-metals');
 const reactiveNonmetalsDiv = document.querySelector('.reactive-nonmetals');
 const nobleGasesDiv = document.querySelector('.nobel-gases');
-const  metalloids_Div = document.querySelector('.metalloids');
+const metalloids_Div = document.querySelector('.metalloids');
 
 
 // Create an array of all the divs using new variable names
