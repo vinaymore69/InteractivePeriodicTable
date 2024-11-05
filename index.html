@@ -3,14 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SanChi</title>
+        <title>Document</title>
         <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.css">
+      
     </head>
 
     <body>
-
+        <div class="intro">
+            <iframe src='https://my.spline.design/distortingtypography-9092cb1d9bec2c251a196b99d3694218/' frameborder='0' width='100%' height='100%'></iframe>
+        </div>
+        
+        
         <div class="main">
 
             <div class="s-block">
@@ -116,7 +119,7 @@
                 </div>
             </div>
 
-            <div class="d-block" data-scroll>
+            <div class="d-block" >
 
                 <div class="main-element-display" data-tilt data-tilt-max="20"
                     data-tilt-speed="700" data-tilt-perspective="900"
@@ -163,20 +166,26 @@
                 </div>
 
 
-
-                <div class="electrons-box" data-tilt data-tilt-max="20"
-                data-tilt-speed="700" data-tilt-perspective="900"
-                data-scroll data-scroll-speeed="-1"
-                data-scroll-direction="horizontal">
-                    <div class="electrons-group">
-                    <h4>Electrons In Each Shells</h4>
-                    <div class="electrons" id="electrons">1</div>
-                </div>
-                <div class="valency-group">
-                    <h4>Valency</h4>
-                    <div class="valency-no" id="valency-no">1</div>
-                </div>
-                </div>
+                <div class="blocks" style=" display:flex; justify-content:center; width:50%; position: absolute;  background-color:transparent; margin-top:280px;">
+                
+                <h2 style="color: aliceblue; font-family:'poppins'; text-align:start; background-color:transparent">Blocks: &nbsp;
+                S-Block
+                <input type="checkbox" style="width: 20px;
+            height: 20px;" id="toggleColor1"> &nbsp;
+                D-Block
+                <input type="checkbox" style="width: 20px;
+                height: 20px;" id="toggleColor2"> &nbsp;
+                P-Block
+                <input type="checkbox" style="width: 20px;
+                height: 20px;" id="toggleColor3">&nbsp;
+                
+                F-Block
+                <input type="checkbox" style="width: 20px;
+                height: 20px;" id="toggleColor4">
+                </h2>
+                
+                </div>    
+               
 
 
 
@@ -185,7 +194,7 @@
                     <div class="box" id="21">
                         <h1>Sc</h1>
                         <h6>21</h6>
-                        <h3>Scandanium</h3>
+                        <h3 id="long-text">Scandanium</h3>
 
                         <h5>44.9559</h5>
                     </div>
@@ -197,13 +206,13 @@
                     </div>
                     <div class="box" id="57a">
                         <h1>Lu</h1>
-                        <h6>57-71</h6>
+                        <h6 id="long-number" style="width:40px; margin-left:38px;">57-71</h6>
                         <h3>Lanthanide</h3>
                         <h5>174.967</h5>
                     </div>
                     <div class="box" id="89a">
-                        <h1 >Ac-Lr</h1>
-                        <h6 id="long-number">89-103</h6>
+                        <h1 id="long-heading">Ac-Lr</h1>
+                        <h6 id="long-number" style="width:40px; margin-left:30px;">89-103</h6>
                         <h3 id="long-text">Lawrencium</h3>
                         <h5>260</h5>
                     </div>
@@ -276,7 +285,7 @@
                     <div class="box" id="42">
                         <h1>Mo</h1>
                         <h6>42</h6>
-                        <h3>Molybdeium</h3>
+                        <h3 id="long-text">Molybdeium</h3>
                         <h5>95.95</h5>
                     </div>
                     <div class="box" id="74">
@@ -464,7 +473,22 @@
 
             </div>
 
-            <div class="p-block" data-scroll>
+            
+            <div class="p-block" >
+                <div class="electrons-box" data-tilt data-tilt-max="20"
+                data-tilt-speed="700" data-tilt-perspective="900"
+                data-scroll data-scroll-speeed="-1"
+                data-scroll-direction="horizontal">
+                    <div class="electrons-group">
+                    <h4>Electronic Configuration</h4>
+                    <div class="electrons" id="electrons">1</div>
+                </div>
+                <div class="valency-group">
+                    <h4>Valency</h4>
+                    <div class="valency-no" id="valency-no">1</div>
+                </div>
+                </div>
+            
                 <div class="group13">
                     <div class="box" id="5">
                         <h1>B</h1>
@@ -730,6 +754,7 @@
 
         </div>
         <div class="main1">
+            <div class="f-block">
             <div class="group20">
                 <div class="box" id="57">
                     <h1>La</h1>
@@ -746,19 +771,19 @@
                 <div class="box" id="59">
                     <h1>Pr</h1>
                     <h6>59</h6>
-                    <h3>Praseodymium</h3>
+                    <h3 id="long-text">Praseodymium</h3>
                     <h5>140.907</h5>
                 </div>
                 <div class="box" id="60">
                     <h1>Nd</h1>
                     <h6>60</h6>
-                    <h3>Neodymium</h3>
+                    <h3 id="long-text">Neodymium</h3>
                     <h5>144.242</h5>
                 </div>
                 <div class="box" id="61">
                     <h1>Pm</h1>
                     <h6>61</h6>
-                    <h3>Promethium</h3>
+                    <h3 id="long-text">Promethium</h3>
                     <h5>145</h5>
                 </div>
                 <div class="box" id="62">
@@ -841,7 +866,7 @@
                 <div class="box" id="91">
                     <h1>Pa</h1>
                     <h6>91</h6>
-                    <h3>Protactinium</h3>
+                    <h3 id="long-text">Protactinium</h3>
                     <h5>231.0359</h5>
                 </div>
                 <div class="box" id="92">
@@ -859,7 +884,7 @@
                 <div class="box" id="94">
                     <h1>Pu</h1>
                     <h6>94</h6>
-                    <h3>Plutonium</h3>
+                    <h3 >Plutonium</h3>
                     <h5>244</h5>
                 </div>
                 <div class="box" id="95">
@@ -894,33 +919,38 @@
                 </div>
                 <div class="box" id="100">
                     <h1>Fm</h1>
-                    <h6>100</h6>
+                    <h6 id="long-number">100</h6>
                     <h3>Fermium</h3>
                     <h5>257</h5>
                 </div>
                 <div class="box" id="101">
                     <h1>Md</h1>
-                    <h6>101</h6>
-                    <h3>Mendelevium</h3>
+                    <h6 id="long-number">101</h6>
+                    <h3 id="long-text">Mendelevium</h3>
                     <h5>258</h5>
                 </div>
                 <div class="box" id="102">
                     <h1>No</h1>
-                    <h6>102</h6>
+                    <h6 id="long-number">102</h6>
                     <h3>Nobelium</h3>
                     <h5>259</h5>
                 </div>
                 <div class="box" id="103">
                     <h1>Lr</h1>
-                    <h6>103</h6>
-                    <h3>Lawrencium</h3>
+                    <h6 id="long-number">103</h6>
+                    <h3 id="long-text">Lawrencium</h3>
                     <h5>262</h5>
                 </div>
             </div>
             
         </div>
-        <script
-            src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
+        
+    
+        <!-- Your custom animation script (gsap.js) -->
+      
         <script src="tilt.js"></script>
         <script src="style.js"></script>
 
