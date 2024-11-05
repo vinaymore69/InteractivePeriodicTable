@@ -779,7 +779,7 @@ function speak(text) {
 
 // Add event listeners to each `.box` div
 document.querySelectorAll('.box').forEach(box => {
-    box.addEventListener('mouseenter', () => {
+    box.addEventListener('click', () => {
         // Get the `id` attribute and convert it to an integer
         let id = parseInt(box.id);
         
