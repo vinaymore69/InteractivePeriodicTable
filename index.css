@@ -3,7 +3,7 @@
 
 
 * {
-    background-color: #1d1d1d;
+    background-color:#080808;
     color: black;
     border-color: white;
 }
@@ -11,13 +11,17 @@ body {
     display: flex;
     flex-direction: column;
 }
+body::-webkit-scrollbar{
+
+display: none;
+}
 .main {
     display: flex;
 
     flex-direction: row;
     border: none;
     border-width: thin;
-    height: 100vh;
+    height: 84vh;
     border-radius: 10px;
     padding: 10px;
     gap: 5px;
@@ -61,6 +65,43 @@ body {
     justify-content: space-around;
     border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
     animation: borderRotate var(--d) linear infinite forwards;
+}
+
+@media screen and (max-width:1498px){
+
+    .main{
+      
+        height: auto;
+        flex-direction: column;
+    }
+  .s-block{
+    flex-direction: column;
+    width: auto;
+    }
+    .p-block{
+    flex-direction: column;
+    width: auto;
+    }
+   .s-block .group1,  .s-block .group2{
+
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   /* background-color: #17773e; */
+
+}
+.p-block .group13,  .p-block .group14, .p-block .group15,  .p-block .group16,  .p-block .group17, .p-block .group18, .p-block .group19 {
+
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   /* background-color: #17773e; */
+
+}
 }
 
 .d-block {
@@ -115,6 +156,7 @@ body {
     gap: 8px;
     /* align-items: flex-end; */
     justify-content: flex-end;
+  
 }
 .group19,
 .group20{
@@ -143,9 +185,11 @@ body {
 
 
 
+
+
 .group1 .box:hover,
 .group2 .box:hover{
-    border-color: crimson;
+    border-color: rgb(255, 255, 255);
 }
 .group3 .box:hover,
 .group4 .box:hover,
@@ -201,6 +245,9 @@ h3{
     margin-top: 60px;
     margin-left: 4px;
     padding-bottom: 4px;
+}
+#long-heading{
+    font-size: medium;
 }
 h5{
     color: #ffffff;
@@ -262,6 +309,7 @@ h6{
     margin-top: 10px;
     margin-left: 10px;
     
+    background-color: #ffffff0d;
     
     border-width: 13px;
     border-radius: 30px;
@@ -614,17 +662,18 @@ cursor: pointer;
     font-family: "poppins";
     flex-direction: row;
     position: absolute;
-    width: 600px;
-    height: 100px;
+    width: 350px;
+    height: 150px;
     border: solid;
     border-width: thin;
     border-color: #EDE7E3;
-    margin-top: 290px;
+    margin-top: 0px;
     border-radius: 10px;
     padding: 0px 20px;
-    gap: 10px;
+    background-color: #ffffff0d;
+    gap: 0px;
     box-shadow: rgb(255, 255, 255) 3.2px 3.2px 8px 0px inset, rgba(253, 216, 216, 0.356) -6.2px -3.2px 17px 0px inset;   
-
+    margin-left: -80px;
   }
   .electrons-group{
     display: flex;
@@ -665,3 +714,17 @@ cursor: pointer;
     background: transparent;
 
   }
+  
+  .intro {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 90px;
+    font-family: 'Moon Walk';
+    text-align: end;
+}
+
+
+
