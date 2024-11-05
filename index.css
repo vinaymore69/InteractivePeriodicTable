@@ -309,7 +309,7 @@ h6{
     margin-top: 10px;
     margin-left: 10px;
     
-    background-color: #ffffff0d;
+    background-color: #000000;
     
     border-width: 13px;
     border-radius: 30px;
@@ -670,7 +670,7 @@ cursor: pointer;
     margin-top: 0px;
     border-radius: 10px;
     padding: 0px 20px;
-    background-color: #ffffff0d;
+    background-color: #000000;
     gap: 0px;
     box-shadow: rgb(255, 255, 255) 3.2px 3.2px 8px 0px inset, rgba(253, 216, 216, 0.356) -6.2px -3.2px 17px 0px inset;   
     margin-left: -80px;
